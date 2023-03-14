@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=Sacramento&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+ul {
+  width: 100%;
+  position: relative;
+  gap: 10px;
+}
+
+ul li {
+  list-style: none;
+  text-align: center;
+}
+
+ul li a {
+  color: #333333;
+  text-decoration: none;
+  font-size: 2em;
+  padding: 5px 20px;
+  display: inline-flex;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+}
+
+ul li:hover a {
+  background: #ffffff;
+  color: var(--clr);
+  font-weight: 500;
+}
+
+ul:hover > li:not(:hover) {
+  opacity: 0;
+}
+
+ul li a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5em;
+  opacity: 0;
+  color: #222222;
+  z-index: -1;
+  font-family: "Sacramento", cursive;
+  font-weight: 400;
+  text-transform: initial;
+  letter-spacing: 500px;
+  transition: letter-spacing 0.5s ease-in-out, left 0.5s ease-in-out;
+}
+
+ul li a:hover::before {
+  content: attr(data-text);
+  opacity: 1;
+  left: 50%;
+  background: var(--clr);
+  width: 250vh;
+  height: 250vh;
+  letter-spacing: 0;
+}
